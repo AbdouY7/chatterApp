@@ -4,6 +4,7 @@ const cors = require("cors");
 const prisma = require("./config/db");
 const authRoutes = require("./routes/auth.route");
 const conversationRoutes = require("./routes/conversation.routes");
+const userRoutes = require("./routes/user.routes");
 const http = require("http");
 const initSocket = require("./socket");
 
@@ -25,6 +26,8 @@ app.use("/api/auth", authRoutes);
 
 // conversation routes
 app.use("/api/conversations", conversationRoutes);
+
+app.use("/api/users", userRoutes);
 
 const PORT = process.env.PORT || 5000;
 httpServer.listen(PORT, () => {

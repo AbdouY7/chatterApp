@@ -56,7 +56,7 @@ async function getMyConversations(req, res) {
         },
         messages: { orderBy: { createdAt: "desc" }, take: 1 },
       },
-      orderBy: { updatedAt: "desc" },
+      orderBy: { createdAt: "desc" },
     });
     res.status(200).json(conversations);
   } catch (error) {
